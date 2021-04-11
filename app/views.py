@@ -21,8 +21,8 @@ def upload():
         photo = form.photo.data
         filename = secure_filename(photo.filename)
         photo.save(os.path.join('./uploads', filename))
-        success = {"message": "File Upload Successful!","filename":filename, "description":description }
-        return jsonify(success=success)
+        successs = {"message": "File Upload Successful!","filename":filename, "description":description }
+        return jsonify(successs=successs)
     else:
         errors = {"errors":form_errors(form)}
         return jsonify(errors=errors)
